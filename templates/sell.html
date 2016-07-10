@@ -1,0 +1,14 @@
+{% extends 'layout/layout.html'%}
+{% load staticfiles %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2 col-sm-12 maincontent" style="padding-top:100px">
+<div class="storefront_product_display" >
+  <a href="{% url 'product_detail' %}">
+  <img src="{% static 'img/logo.png' %}">
+  <span class="storefront_product_name">{{ products }}</span>
+  <span class="storefront_product_companyname">{{ product.company }} </span>
+</div>
+</div>
+
+{% endblock %}

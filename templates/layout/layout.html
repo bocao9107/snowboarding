@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<html lang="zh">
+<head>
+
+  <link href="{% static 'css/bootstrap.min.css' %} " rel="stylesheet" />
+  <link href="{% static 'css/main.min.css' %} " rel="stylesheet" />
+  <link href="{% static 'css/agency.css' %} " rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>SnowboardingZoneInChina</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">单板snowboarding</a>
+          </div>
+          <div id="navbar" class="nav－menu-on">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'homepage'%}">主页</a></li>
+              <li><a href="http://127.0.0.1:8000/snowboarding">单板snowbarding</a></li>
+              <li><a href="http://127.0.0.1:8000/sking">双板sking</a></li>
+              <li><a href="http://127.0.0.1:8000/about">关于滑雪</a></li>
+              <li><a href="http://127.0.0.1:8000/posts">论坛</a></li>
+              <li><a href="http://127.0.0.1:8000/activate">活动</a></li>
+              <li><a href="http://127.0.0.1:8000/sell">品牌商城</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              {% if user.is_authenticated %}
+                <a id="profile-box" class="btn dropdown-info" data-toggle="dropdown" href="#">
+                    <i class="icon-user"></i> {{ user.username }}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">个人资料</a></li>
+                    <li class="divider"></li>
+                    <li><a id="sign-out-link" href="{% url 'auth_logout' %}">登出</a></li>
+                </ul>
+
+              {% else %}
+                 <a href="{% url 'registration_register' %}"<li><p class="navbar-text">没有账号?</p></li></a>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+         			<ul id="login-dp" class="dropdown-menu">
+         				<li>
+         					 <div class="row">
+         							<div class="col-md-12">
+         								Login via
+         								<div class="social-buttons">
+         									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+         									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+         								</div>
+                                         or
+         								 <form method="post" action="{% url 'auth_login' %}" accept-charset="UTF-8" id="login-nav">
+                          {% csrf_token %}
+         										<div class="form-group">
+         											 <label class="sr-only" for="username">username</label>
+         											 <input type="username" class="form-control" id="id_username" name="username" placeholder="username" required>
+         										</div>
+         										<div class="form-group">
+         											 <label class="sr-only" for="Password">Password</label>
+         											 <input type="password" class="form-control" id="id_Password" name="password" placeholder="Password" required>
+                                                      <div class="help-block text-right"><a href="{% url 'auth_password_reset' %}">Forget the password ?</a></div>
+         										</div>
+         										<div class="form-group">
+         											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+         										</div>
+         										<div class="checkbox">
+         											 <label>
+         											 <input type="checkbox"> keep me logged-in
+         											 </label>
+         										</div>
+         								 </form>
+         							</div>
+         							<div class="bottom text-center">
+         								New here ? <a href="{% url 'registration_register' %}"><b>Join Us</b></a>
+         							</div>
+         					 </div>
+         				</li>
+         			</ul>
+                 </li>
+                 {% endif %}
+               </ul>
+
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+       <footer class="footer">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-4">
+                     <span class="copyright">Copyright © Your Website 2016</span>
+                 </div>
+                 <div class="col-md-4 pull-right">
+                     <ul class="list-inline quicklinks">
+                         <li><a href="#">Privacy Policy</a>
+                         </li>
+                         <li><a href="#">Terms of Use</a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+       </footer>
+
+
+       <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/classie.js'}"></script>
+       <script type="text/javascript" src="{% static 'js/cbpAnimatedHeader.js'}"></script>
+       <script type="text/javascript" src="{% static 'js/jqBootstrapValidation.js'}"></script>
+         <script type="text/javascript" src="{% static 'js/contact me.js'}"></script>
+           <script type="text/javascript" src="{% static 'js/agency.js'}"></script>
+</body>
+</html>

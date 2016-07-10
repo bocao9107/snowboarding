@@ -1,0 +1,25 @@
+{% extends "layout/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='row' >
+<div class='col-sm-6 col-sm-offset-3' style="padding-top:100px">
+<h1>登录</h1>
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form|crispy }}
+
+  <input class='btn btn-block btn-primary' type="submit" value＝"提交" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+</div>
+
+</div>
+<hr/>
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3 text-align-center'>
+<p>忘记密码 <a href="{% url 'auth_password_reset' %}">重置密码</a>!</p>
+<p>不是会员？ <a href="{% url 'registration_register' %}">注册会员</a>!</p>
+</div>
+</div>
+
+{% endblock %}

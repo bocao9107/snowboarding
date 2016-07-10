@@ -1,0 +1,11 @@
+{% load i18n %}
+在 {{ site.name }}进行激活账号:
+
+你好：
+  您在{{site.name}}进行了注册账号， 请点击下面链接进行最后激活：
+
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}
+
+这个链接只有效{{expiration_days}}，请在失效之前紧激活
+
+————snowboardingzone

@@ -1,0 +1,22 @@
+{% extends 'layout/layout.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
+  <div class="detail_product_display">
+    <img class="detail_book_img" src="{% static 'img/logo.png' %}"/>
+    <span class="detail_product_name"> {{ product.name }}  </span>
+    <span class="detail_product_companyname"> {{ product.companyname }} </span>
+    <div class="detail_product_description"> {{product.description}}</div>
+    <div class="detail_product_reviews_titile">review</div>
+      {% if product.reviews %}
+        {% for review in product.reviews %}
+          {{review.text}}
+        {% endfor %}
+      {% else %}
+        there are no reviews for this product yet!
+      {% endif %}
+    </div>
+</div>
+{% endblock %}

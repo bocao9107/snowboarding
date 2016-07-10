@@ -1,0 +1,12 @@
+{% extends "layout/layout.html" %}
+
+
+{% block content %}
+<div class='container-fluid' style="padding-top:100px" >
+<p>
+  You have successfully logged out.
+</p>
+
+<p class='text-align-center lead'><a href="{% url 'auth_login' %}">Login</a></p></p>
+</div>
+{% endblock %}

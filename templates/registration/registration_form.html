@@ -1,0 +1,17 @@
+{% extends 'layout/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid" style="padding-top:100px">
+
+<form action="." method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+
+  <input class="btn btn-primary "type="submit" value="注册账号"/>
+
+
+</form>
+</div>
+
+
+{% endblock %}
