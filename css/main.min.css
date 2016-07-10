@@ -1,0 +1,114 @@
+.navbar-default .navbar-form {
+    border-color: #292929;
+}
+.footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #292929;
+}
+.copyright{
+  color: white;
+}
+
+.storefront_product_display{
+
+  width: 200px;
+  display:inline-block;
+  text-align: center;
+}
+
+.storefront_product_name{
+  font-size: 14px;
+  text-align: center;
+  display:block;
+  font-weight:bold;
+}
+.storefront_product_companyname{
+  font-size: 11px;
+  text-align: center;
+}
+
+.detail_product_display{
+  text-align: center;
+  margin-top:30px
+}
+
+.detail_product_name{
+  font-size: 20px;
+  display:block;
+  font-weight: bold;
+}
+
+.detail_product_companyname{
+  font-size: 16px;
+  display:block;
+}
+
+.detail_product_description{
+  text-align: left;
+  margin-top:100px;
+  width: 80%;
+  margin-left:auto;
+  margin-right: auto;
+}
+.detail_product_reviews_titel{
+  margin-top:100px;
+  margin-bottom:20px;
+  font-size: 20px;
+  display: block;
+  font-weight:bold;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
